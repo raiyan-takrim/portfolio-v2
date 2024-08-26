@@ -41,32 +41,61 @@ export default function Home() {
             {/* Info Section */}
             <div className="md:mr-16">
                 {/* Leading Texts */}
-                <motion.div
-                    initial={{
-                        y: 100,
-                        opacity: 0,
-                    }}
-                    animate={{
-                        y: 0,
-                        opacity: 1,
-                    }}
-                    transition={{
-                        // duration: 0.5
-                    }}
-                >
-                    <h2 className="text-lg font-mono text-custom-green-base">Hi, my name is </h2>
-                    <h1 style={{
-                        fontSize: 'clamp(40px, 8vw, 60px)', lineHeight: 1.1,
-                    }} className="my-2 font-bold text-slate-lightest">Raiyan Takrim.</h1>
-                    <h2 style={{
-                        fontSize: 'clamp(40px, 8vw, 60px)', lineHeight: 1.1,
-                    }} className="font-bold">I build things for the web.</h2>
-                </motion.div>
+                <div>
+                    <motion.h2
+                        initial={{
+                            y: 10,
+                            opacity: 0,
+                        }}
+                        animate={{
+                            y: 0,
+                            opacity: 1,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                            ease: "easeIn"
+                        }}
+                        className="text-lg font-mono text-custom-green-base">Hi, my name is </motion.h2>
+                    <motion.h1
+                        initial={{
+                            y: 10,
+                            opacity: 0,
+                        }}
+                        animate={{
+                            y: 0,
+                            opacity: 1,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                            delay: 0.1,
+                            ease: "easeIn"
+                        }}
+                        style={{
+                            fontSize: 'clamp(40px, 8vw, 60px)', lineHeight: 1.1,
+                        }} className="my-2 font-bold text-slate-lightest">Raiyan Takrim.</motion.h1>
+                    <motion.h2
+                        initial={{
+                            y: 10,
+                            opacity: 0,
+                        }}
+                        animate={{
+                            y: 0,
+                            opacity: 1,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                            delay: 0.2,
+                            ease: "easeIn"
+                        }}
+                        style={{
+                            fontSize: 'clamp(40px, 8vw, 60px)', lineHeight: 1.1,
+                        }} className="font-bold">I build things for the web.</motion.h2>
+                </div>
 
                 {/* Details Section */}
                 <motion.div className="my-10"
                     initial={{
-                        y: 100,
+                        y: 10,
                         opacity: 0,
                     }}
                     animate={{
@@ -74,7 +103,9 @@ export default function Home() {
                         opacity: 1,
                     }}
                     transition={{
-                        // duration: 0.5
+                        delay: 0.3,
+                        duration: 0.7,
+                        ease: "easeIn"
                     }}>
                     <p>As a Full-Stack Next.js Developer, I turn your ideas into engaging web experiences. I focus on delivering personalized, high-quality solutions that bring your vision to life. Let&apos;s create something amazing together!</p>
                 </motion.div>
@@ -89,9 +120,9 @@ export default function Home() {
                         opacity: 1,
                         y: 0
                     }}
-                // transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.7, delay: 0.4, ease: "easeIn" }}
                 >
-                    <Link href="#" className="text-lg inline-block rounded-md hover:shadow-btn-shadow text-custom-green-base border border-custom-green-base px-6 py-2 transition hover:-translate-x-1 hover:-translate-y-1 mr-6">Contact Me</Link>
+                    <Link href="#contact" className="text-lg inline-block rounded-md hover:shadow-btn-shadow text-custom-green-base border border-custom-green-base px-6 py-2 hover:-translate-x-1 hover:-translate-y-1 transition duration-300 ease-out mr-6">Contact Me</Link>
                     <Link href='/cv.pdf' download={true} className="dnld-cv flex place-items-center relative after:block after:h-px after:absolute after:w-0 hover:after:w-full after:bottom-2 after:bg-custom-green-base">
                         Download CV
                         <AiOutlineCloudDownload className="ml-2 inline" />
@@ -100,7 +131,7 @@ export default function Home() {
             </div>
 
             {/* Large Screen Image Section */}
-            <div className="hidden lg:block">
+            <motion.div className="hidden lg:block" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1, }} transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}>
                 <div className="hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-300 ease-linear hover:before:translate-x-4 hover:before:translate-y-4 before:transition-transform before:duration-300 before:ease-linear">
                     <div className="shadow-lg shadow-navy-base
                     relative after:block after:absolute after:bg-custom-green-base z-50 after:inset-0 after:opacity-30 hover:after:opacity-0 after:transition after:duration-500 after:ease-linear after:rounded-md
@@ -110,7 +141,7 @@ export default function Home() {
                         <Image src={raiyanPortrait} alt="Raiyan Takrim's Photo" className="h-auto w-[500px] rounded-md" />
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }
