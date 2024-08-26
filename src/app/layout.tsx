@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
+import SocialBars from "@/components/socialBars";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-navy-base text-slate-slate`}>
         {/* <Header /> */}
-        <div className="sm:container sm:mx-auto px-6 sm:px-10 max-w-6xl">{children}</div>
+        <SocialBars>
+          <div className="relative sm:container sm:mx-auto px-6 sm:px-16 max-w-6xl">
+
+            {children}
+          </div>
+        </SocialBars>
       </body>
     </html>
   );

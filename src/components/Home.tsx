@@ -123,7 +123,7 @@ export default function Home() {
                     transition={{ duration: 0.7, delay: 0.4, ease: "easeIn" }}
                 >
                     <Link href="#contact" className="text-lg inline-block rounded-md hover:shadow-btn-shadow text-custom-green-base border border-custom-green-base px-6 py-2 hover:-translate-x-1 hover:-translate-y-1 transition duration-300 ease-out mr-6">Contact Me</Link>
-                    <Link href='/cv.pdf' download={true} className="dnld-cv flex place-items-center relative after:block after:h-px after:absolute after:w-0 hover:after:w-full after:bottom-2 after:bg-custom-green-base">
+                    <Link href='/cv.pdf' download={true} className="dnld-cv text-custom-green-base flex place-items-center relative after:block after:h-px after:absolute after:w-0 hover:after:w-full after:bottom-2 after:bg-custom-green-base">
                         Download CV
                         <AiOutlineCloudDownload className="ml-2 inline" />
                     </Link>
